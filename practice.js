@@ -5,7 +5,12 @@
 
   //Code here
 
+var me = {
+  name: "Jeff Telford",
+  age: 34
+};
 
+alert(me.name);
 
 
 //NEXT PROBLEM
@@ -15,18 +20,25 @@
 
 //Make a 'favoriteThings' object that contains the following keys: band, food, person, book, movie, holiday. Have the values to those keys be your favorite thing in that category.
 
-  //Code here
+var favoriteThings = (
+  band: "Pink Floyd",
+  food: "pizza",
+  person: "Heather",
+  book: "Hatchet",
+  movie: "The War",
+  holiday: "Christmas"
+  );
 
 
 //After you've made your object, add another key named 'car' with the value being your favorite car and then another key named 'brand' with the value being your favorite brand.
 
-  //Code here
-
+favoriteThings.car = "BMW",
+favoriteThings.brand = "Under Armour"
 
 //Now change the food key in your favoriteThings object to be 'Lettuce' and change the book key in your favoriteThings object to be '50 Shades of Gray'.
 
-  //Code here
-
+favoriteThings.food = "lettuce"
+favoriteThings.book = "50 Shades of Grey"
 
 
 
@@ -40,17 +52,24 @@ key (or property) to backPack, using the item variable. Now using dot notation,
 add a key (or property) to your backPack object that is named color, 
 with the value being the color of your backpack. */
 
-  //Code here
+var backPack = {};
+
+var item = "firstPocket";
+
+backPack[item] = "chapstick";
+
+backPack.color = "blue";
+
 
 //After you do the above, alert your entire backPack object.
 
-  //Code here
+// alert(backPack);
 
 /*You probably noticed that it just alerted [object Object].
 Alerting to see the data in your Object doesn't work so well.
 Instead, console.log your whole backPack object and then check out the console. */
 
-  //Code here
+console.log(backPack);
 
 
 
@@ -62,7 +81,15 @@ Instead, console.log your whole backPack object and then check out the console. 
 
 //Create another 'me' object with the following properties name, age, height, gender, married, eyeColor, hairColor. Fill those properties in with the appropriate values.
 
-  //Code Here
+var me = {
+  name: "Jeff",
+  age: 34,
+  height: "short",
+  gender; "male",
+  married: "yes",
+  eyeColor: "brown",
+  hairColor: "brown",
+};
 
 //Now, loop through your object and alert every value. *Tyler --> 24 --> 6'0 --> Male, etc etc
 
