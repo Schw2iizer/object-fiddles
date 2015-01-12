@@ -85,7 +85,7 @@ var me = {
   name: "Jeff",
   age: 34,
   height: "short",
-  gender; "male",
+  gender: "male",
   married: "yes",
   eyeColor: "brown",
   hairColor: "brown",
@@ -93,7 +93,9 @@ var me = {
 
 //Now, loop through your object and alert every value. *Tyler --> 24 --> 6'0 --> Male, etc etc
 
-  //Code Here
+for (var key in me){
+  alert(me[key]);
+}
 
 
 
@@ -105,11 +107,19 @@ var me = {
 
 //Create an Object called 'album' with 5 keys named different song titles that you make up, with the values being the length of each song.
 
-  //Code Here
+var album = {
+  computerRap: 55,
+  mormonRap: 120,
+  javascriptRap: 44,
+  codingRap: 53,
+  devMountainRap: 111
+};
 
 //Now, loop through your album object alerting every song title individually.
 
-  //Code Here
+for (var key in album){
+  alert(key);
+}
 
 
 
@@ -121,11 +131,21 @@ var me = {
 
 //Create an object called states that has 5 US states as properties with the values being their population (doesn't have to be accurate).
 
-  //Code Here
+var states = {
+  Utah: 200000,
+  California: 400000,
+  Arizona: 350000,
+  Wyoming: 100000,
+  Washington: 250000
+};
 
 //Now, loop through your states object and if the states population is greater than 30K, alert that state.
 
-  //Code Here
+for (var key in states){
+  if (states[key] > 30000){
+    alert(key);
+  }
+}
 
 
 
@@ -146,11 +166,16 @@ var user = {
 /*Above you're given a user object. Loop through the user object checking to make sure
 that each value is truthy. If it's not truthy, remove it from the object. */
 
-  //Code Here
-
+for (var key in user){
+  if (!user[key]){
+    delete user[key];
+  }
+}
 //Once you get your truthy Object, Change the remaining values in the object to be specific to you (name: 'your name', username: 'your username'), rather than my information.
 
-  //Code Here
+user.name = "Jeff Telford"
+user.pwHash = "me"
+user.username = "Schw2iizer"
 
 
 
@@ -174,13 +199,14 @@ var user = {
 //Let's say I, the user, decided to change my name and email address to the following
 // name -> 'Tyler S. McGinnis', email -> 'tyler.mcginnis@devmounta.in'. Make that change.
 
-  //Code Here
+user.name = "Tyler S. McGinnis"
+user.email = "tyler.mcginnis@devmouna.in"
 
 //Now call the sayName method that's on the user object which will alert the users email
 
   //Code Here
 
-
+user.sayName();
 
 
 //NEXT PROBLEM
@@ -190,18 +216,25 @@ var user = {
 
 //Create an empty object called methodCollection.
 
-  //Code Here
+var methodCollection = {};
 
 /*Now add two methods (functions that are properties on objects) to your methodCollection
 object. One called 'alertHello' which alerts 'hello' and another method called logHello
  which logs 'hello' to the console. */
 
-  //Code Here
+  methodCollection.alertHello = function(){
+    alert("hello");
+  }
+
+  methodCollection.logHello = function(){
+    console.log("hello");
+  }
 
 //Now call your alertHello and logHello methods.
 
   //Code Here
-
+methodCollection.alertHello();
+methodCollection.logHello();
 
 
 
@@ -240,12 +273,21 @@ var colt = {
 array with those four objects. After that console.log the length of the Array and make
 sure that it's equal to 4. */
 
-  //Code Here
+devMountainEmployees.push(tyler);
+devMountainEmployees.push(cahlan);
+devMountainEmployees.push(ryan);
+devMountainEmployees.push(colt);
+
+console.log(devMountainEmployees.length);
 
 /*Now let's say Cahlan has a mental breakdown and has to take a leave of absense to 'find himself'.
 Loop through your devMountainEmployees until you find cahlan, then remove him from the array.*/
 
-  //Code Here
+for (var i = 0; i < devMountainEmployees.length; i++) {
+  if (devMountainEmployees[i] === cahlan){
+    devMountainEmployees.splice(i, 1);
+  }
+}
 
 
 
@@ -271,7 +313,7 @@ var data = [
     {
         artist: 'shakira',
         album: 'mariposa',
-        tracks: 12,
+        tracks: 15
     },
     {
         artist: 'shakira',
@@ -287,21 +329,39 @@ of Data is to have an Array full of objects. */
 
 //Create an empty array called users.
 
-  //Code Here
+var users = [];
 
 /*Now add three user objects to your users array. Each user object should contain the
 following properties. name, email, password, username.*/
 
 //include this as one of the objects in your array.
-var user1 = {
+users.push({
     name: 'Tyler McGinnis',
     email: 'tylermcginnis33@gmail.com',
     password: 'iLoveJavaScript',
     username: 'infiniateLoop'
-}
+})
 
-//Your Code Here
+users.push({
+    name: "Jeff Telford",
+    email: "Jefftelford@gmail.com",
+    password: "iLoveJavaScript",
+    username: "Schw2iizer"
+})
 
+users.push({
+    name: "Mike",
+    email: "Mike@yahoo.com",
+    password: "hello",
+    username: "MikeT"
+})
+
+users.push({
+    name: "Todd",
+    email: "Todd@gmail.com",
+    password: "helloWorld",
+    username: "ToddT"
+})
 /*Now you have a very common data structure. Twitter is a good use case.
 It's easy to imagine that your followers list on Twitter is an Array full or objects
 and those objects contain properties about the specific person you follow.*/
